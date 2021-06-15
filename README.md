@@ -5,6 +5,26 @@
 
 ![alt text](https://github.com/prateekgoelmzn/CodingPrep/blob/main/kadane_algo.jpeg)
 
+In Case, all the elements present in array is negative then below is the modification in the kadane algorithm.
+```
+// Input : [-1,-2,-3,-4,-5] -> output : -1
+    int maxSubarraySum(int arr[], int n){
+        
+        // Your code here
+        int curr_sum = 0;  // keep track of the current sum
+        int best_sum = Integer.MIN_VALUE;
+        int max = Integer.MIN_VALUE;
+        
+        for(int ele : arr){
+            curr_sum = Math.max(curr_sum+ele,0);
+            best_sum = Math.max(curr_sum,best_sum);
+            max = Math.max(max,ele);
+        }
+        
+        return max<0?max:best_sum;
+    }
+```
+
 Resources
 * https://youtu.be/HCL4_bOd3-4
 * [wikipedia article on kadane algo.](https://en.wikipedia.org/wiki/Maximum_subarray_problem)
