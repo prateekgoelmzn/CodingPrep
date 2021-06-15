@@ -7,6 +7,8 @@
 
 Resources
 * https://youtu.be/HCL4_bOd3-4
+* [wikipedia article on kadane algo.](https://en.wikipedia.org/wiki/Maximum_subarray_problem)
+
 #### 2) Subset of a Set
 
 ![alt text](https://github.com/prateekgoelmzn/CodingPrep/blob/main/subsetOfSet_algo.jpeg)
