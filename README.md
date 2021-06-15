@@ -21,3 +21,4 @@ Resources
 * [BFS](https://youtu.be/geOBaNYYInc)
 * [DFS](https://youtu.be/GmZNp9_-imM)
 * [GFG BFS Code](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+* [GFG DFS Code](https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/)
