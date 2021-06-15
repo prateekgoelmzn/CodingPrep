@@ -33,6 +33,10 @@ Resources
 
 ![alt text](https://github.com/prateekgoelmzn/CodingPrep/blob/main/subsetOfSet_algo.jpeg)
 
+Subset printing using bitwise approach
+
+![alt text](https://github.com/prateekgoelmzn/CodingPrep/blob/main/print_all_subset_bitwise.png)
+
 Resources
 * https://youtu.be/u0e29JIdxZU
 #### 3) BFS and DFS on Graph
