@@ -1,4 +1,3 @@
-
 ## Day-2 (16/06/2021)
 ### Data Structure
 #### Trie
