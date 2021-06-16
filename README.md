@@ -6,7 +6,7 @@
 ![alt text](https://github.com/prateekgoelmzn/CodingPrep/blob/main/kadane_algo.jpeg)
 
 In Case, all the elements present in array is negative then below is the modification in the kadane algorithm.
-```
+```java
 // Input : [-1,-2,-3,-4,-5] -> output : -1
     int maxSubarraySum(int arr[], int n){
         
