@@ -2,7 +2,7 @@
 ### Data Structure
 #### Trie
 
-```
+```java
 class TrieNode{
     
     public TrieNode[] children = null;
