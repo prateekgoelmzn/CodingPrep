@@ -48,3 +48,40 @@ Resources
 * [DFS](https://youtu.be/GmZNp9_-imM)
 * [GFG BFS Code](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
 * [GFG DFS Code](https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/)
+
+
+## Day-2 (17/06/2021)
+### Binary Tree
+#### DFS approach to traverse on Binary Tree. Also, it helps to solve most of the problem related to binary tree.
+```
+* Base case nikalo
+* Recursion call krdo left and right pr
+* And finally jo krna hai wo main root node s krdo
+```
+e.g
+```java
+/* 
+ * Program to find sum of all nodes of a binary tree. 
+ **/
+int sum(TreeNode root){
+    if(root==null){
+        return 0;
+    }
+    int left = dfs(root.left);
+    int right = dfs(root.right);
+    return root.val + left + right;
+}
+
+
+/* 
+ * Program to find max value node among all nodes of a binary tree. 
+ **/
+int max(TreeNode root){
+    if(root==null){
+        return 0;
+    }
+    int left = max(root.left);
+    int right = max(root.right);
+    return Math.max(root.val + left + right);
+}
+```
