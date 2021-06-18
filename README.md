@@ -85,3 +85,9 @@ int max(TreeNode root){
     return Math.max(root.val + left + right);
 }
 ```
+## Day-3 (18/06/2021)
+### Segment Tree
+#### Segment Tree : it helps to solve questions related to range sum query.
+Resources
+* [Segment Tree Java Code](https://github.com/Sunchit/Coding-Decoded/blob/master/June2021/RangeSumMutable.java)
+* [Segment Tree Explaination YouTube Video](https://youtu.be/dUkRI0R3sg8)
