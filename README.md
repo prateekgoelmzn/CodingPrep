@@ -94,11 +94,11 @@ Resources
 
 ## Day-4 (19/06/2021)
 ### Some question tricks
-#### Kth Smallest Element in a BST | LeetCode - 230
+#### 1. Kth Smallest Element in a BST | LeetCode - 230
 Approach:
-* the fact that inorder traversal on BST gives values of nodes in increasing order.
-* so using above fact. we can do inorder traversal on BST along with it we have to store traversed node in a list.
-* now return k-1 index element from the list, it is our ans.
+* The fact that inorder traversal on BST gives values of nodes in increasing order.
+* So using above fact. we can do inorder traversal on BST along with it we have to store traversed node in a list.
+* Now return k-1 index element from the list, it is our ans.
 ```java
 class Solution {
     List<Integer> list;
@@ -120,7 +120,7 @@ class Solution {
 }
 ```
 
-#### Given an array, rotate the array clockwise k places. without using extra space and TC should be O(n)
+#### 2. Given an array, rotate the array clockwise k places. without using extra space and TC should be O(n)
 * Input : 1 2 3 4 5 6 7 and k=2 
 * Output : 7 6 1 2 3 4 5
 
