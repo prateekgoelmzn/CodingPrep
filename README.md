@@ -91,3 +91,40 @@ int max(TreeNode root){
 Resources
 * [Segment Tree Java Code](https://github.com/Sunchit/Coding-Decoded/blob/master/June2021/RangeSumMutable.java)
 * [Segment Tree Explaination YouTube Video](https://youtu.be/dUkRI0R3sg8)
+
+## Day-4 (19/06/2021)
+### Some question tricks
+#### Kth Smallest Element in a BST | LeetCode - 230
+Approach:
+* the fact that inorder traversal on BST gives values of nodes in increasing order.
+* so using above fact. we can do inorder traversal on BST along with it we have to store traversed node in a list.
+* now return k-1 index element from the list, it is our ans.
+```java
+class Solution {
+    List<Integer> list;
+    public int kthSmallest(TreeNode root, int k) {
+        list = new ArrayList<Integer>();
+        inorderTraversal(root);
+        return list.get(k-1);
+    }
+    
+    public void inorderTraversal(TreeNode root){
+        if(root==null){
+            return;
+        }
+        
+        inorderTraversal(root.left);
+        list.add(root.val);
+        inorderTraversal(root.right);
+    }
+}
+```
+
+#### Given an array, rotate the array clockwise k places. without using extra space and TC should be O(n)
+* Input : 1 2 3 4 5 6 7 and k=2 
+* Output : 7 6 1 2 3 4 5
+
+Approach:
+* reverse(arr,0,arr.length-k-1) // 5 4 3 2 1 6 7
+* reverse(arr,arr.length-k,arr.length-1) // 5 4 3 2 1 7 6
+* reverse(arr,0,arr.length-1) // 6 7 1 2 3 4 5
