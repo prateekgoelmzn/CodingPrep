@@ -128,3 +128,7 @@ Approach:
 * reverse(arr,0,arr.length-k-1) // 5 4 3 2 1 6 7
 * reverse(arr,arr.length-k,arr.length-1) // 5 4 3 2 1 7 6
 * reverse(arr,0,arr.length-1) // 6 7 1 2 3 4 5
+
+
+# Resources
+* [DS and Algo basic overview](https://github.com/kdn251/interviews)
