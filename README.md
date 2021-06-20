@@ -130,6 +130,44 @@ Approach:
 * reverse(arr,0,arr.length-1) // 6 7 1 2 3 4 5
 
 
+## Day-5 (20/06/2021)
+### Some question tricks
+#### 1. Palindromic Substrings | Leetcode: 647
+Approach : [Manacher Algorithm](https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/)
+```java
+int numPalindromic(String str){
+	
+	int ans = 0;
+	
+	// find count of odd length substring
+	for(int i=0;i<str.length;i++){
+		for(int j=0;j+i<str.length()&&i-j>=0;j++){
+			if(str[i+j]!=str[i-j]){
+				break;
+			}
+			else{
+				ans++;
+			}
+		}
+	}
+	
+	// find count of even length substring
+	for(int i=0;i<str.length;i++){
+		for(int j=0;j+i+1<str.length()&&i-j>=0;j++){
+			if(str[i+j+1]!=str[i-j]){
+				break;
+			}
+			else{
+				ans++;
+			}
+		}
+	}
+	
+	return ans;	
+}
+```
+
+
 # Resources
 * [DS and Algo basic overview](https://github.com/kdn251/interviews)
 * [Leetcode DSA Sheet](https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0)
