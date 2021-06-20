@@ -166,7 +166,7 @@ int numPalindromic(String str){
 	return ans;	
 }
 ```
-
+* [Coding Ninja YT video explaination](https://youtu.be/lIV-IXhpqtU)
 
 # Resources
 * [DS and Algo basic overview](https://github.com/kdn251/interviews)
