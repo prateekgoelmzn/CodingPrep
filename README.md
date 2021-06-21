@@ -221,4 +221,4 @@ Approach :
 
 # Resources
 * [DS and Algo basic overview](https://github.com/kdn251/interviews)
-* [Leetcode DSA Sheet](https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0)
+* [Leetcode 75 questions DSA Sheet](https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0)
