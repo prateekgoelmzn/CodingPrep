@@ -168,6 +168,57 @@ int numPalindromic(String str){
 ```
 * [Coding Ninja YT video explaination](https://youtu.be/lIV-IXhpqtU)
 
+## Day-6 (21/06/2021)
+#### 1. Pascal triangle | Leetcode: 118
+![pascal triangle](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
+
+code :
+```java
+class Solution {
+    
+    public static List<List<Integer>> pascalTriangle;
+    
+    public static void pascalSolve(int n){
+    
+        if(n == 1){
+            pascalTriangle.add(Arrays.asList(1));
+            return;
+        }
+        if(n == 2){
+            pascalSolve(n-1);
+            pascalTriangle.add(Arrays.asList(1,1));
+            return; 
+        }
+    
+        pascalSolve(n-1);
+        
+        List<Integer> oldPascalRow = pascalTriangle.get(pascalTriangle.size()-1);
+    
+        List<Integer> result = new ArrayList<>();
+        result.add(1);
+        for(int i=1;i<oldPascalRow.size();i++){
+            result.add(oldPascalRow.get(i) + oldPascalRow.get(i-1));
+        }
+        result.add(1);
+    
+        pascalTriangle.add(result);
+    }    
+    
+    public List<List<Integer>> generate(int numRows) {
+        pascalTriangle = new ArrayList<>();
+        pascalSolve(numRows);
+        return pascalTriangle;
+    }
+    
+}
+```
+#### 2. Top k frequent elements | Leetcode : 347
+Approach : 
+* First find the frequency of every element present in given array.
+* Use heap, we can use any either min heap or max heap.
+* 1) if we are using max heap, we have to store element in pair form e.g. <element, frequency> and max heap compare element on the basis of frequency. greater the frequency the element will be at top. At last, we have to pop k elements from heap and that will be our answer.
+* 2) if we are using min heap, we have to fix the size of heap as k. now we have to insert the element in pair form e.g. <element, frequency>. once it get filled by k element and we still have elements to fill then we pop the top element and insert new element.this way at last we have k element in the heap whose frequency will be most frequent.
+
 # Resources
 * [DS and Algo basic overview](https://github.com/kdn251/interviews)
 * [Leetcode DSA Sheet](https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0)
