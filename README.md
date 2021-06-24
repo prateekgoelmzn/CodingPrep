@@ -289,6 +289,33 @@ class Solution {
         
     }
 ```
+#### 3. Catalan Number
+* LeetCode problem : [96. Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/)
+```java
+class Solution {
+    long catalan(int n)
+    {
+        long catNum = 1;
+     
+        if(n==1){
+            return catNum;
+        }
+    
+        for (int i = 1; i <=n; i++)
+        {
+            catNum *= (4 * i - 2);
+            catNum /= (i + 1);
+        }
+        
+        return catNum;
+    }
+    
+    public int numTrees(int n) {
+        return (int)catalan(n);
+    }
+}
+```
+* [Applications of Catalan Number](https://www.geeksforgeeks.org/applications-of-catalan-numbers/)
 
 # Resources
 * [DS and Algo basic overview](https://github.com/kdn251/interviews)
