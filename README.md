@@ -219,6 +219,77 @@ Approach :
 * 1) if we are using max heap, we have to store element in pair form e.g. <element, frequency> and max heap compare element on the basis of frequency. greater the frequency the element will be at top. At last, we have to pop k elements from heap and that will be our answer.
 * 2) if we are using min heap, we have to fix the size of heap as k. now we have to insert the element in pair form e.g. <element, frequency>. once it get filled by k element and we still have elements to fill then we pop the top element and insert new element.this way at last we have k element in the heap whose frequency will be most frequent.
 
+## Day-7 (24/06/2021)
+#### 1. [Unique Paths](https://leetcode.com/problems/unique-paths/) | Leetcode: 62
+Approach :
+* Apply DFS along with memoization
+
+```java
+class Solution {
+    Integer memo[][] = null;
+    public int uniquePaths(int m, int n) {
+        memo = new Integer[m][n];
+        return dfs(m-1,n-1);
+    }
+    
+    public int dfs(int m , int n){
+        if(m<0 || n<0){
+            return 0;
+        }
+        
+        if(m==0 && n==0){
+            return 1;
+        }
+        
+        if(memo[m][n]!=null){
+            return memo[m][n];
+        }
+        
+        int down = dfs(m-1,n);
+        int right = dfs(m,n-1);
+        
+        return memo[m][n] = down+right;
+    }
+}
+```
+#### 2. [Out of Boundary Paths](https://leetcode.com/problems/out-of-boundary-paths/) | Leetcode : 576 
+Approach : it is similar to above one i.e. unique paths. DFS with Memoization
+```java
+class Solution {
+    // TC : O(n * m * maxMoves)
+    private Long memo[][][] = null;
+    private int mod = 1000000007;
+    
+    public int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
+        memo = new Long[m+1][n+1][maxMove+1];
+        return (int)(findPathsMemoHelper(m,n,maxMove,startRow,startColumn));
+    }
+    
+    public long findPathsMemoHelper(int m,int n,int maxMove,int srow,int scol){
+        if(maxMove<0){
+            return 0;
+        }
+        
+        if(srow<0 || srow>=m || scol<0 || scol>=n){
+            return 1;
+        }
+        
+        if(memo[srow][scol][maxMove]!=null){
+            return memo[srow][scol][maxMove];
+        }
+        
+        long total = 0;
+        long left = findPathsMemoHelper(m,n,maxMove-1,srow,scol-1);
+        long right = findPathsMemoHelper(m,n,maxMove-1,srow,scol+1);
+        long up = findPathsMemoHelper(m,n,maxMove-1,srow-1,scol);
+        long down = findPathsMemoHelper(m,n,maxMove-1,srow+1,scol);
+        
+        total = ((left+right+up+down)%mod);
+        return memo[srow][scol][maxMove] = total;
+        
+    }
+```
+
 # Resources
 * [DS and Algo basic overview](https://github.com/kdn251/interviews)
 * [Leetcode 75 questions DSA Sheet](https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit#gid=0)
